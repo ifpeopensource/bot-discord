@@ -7,7 +7,9 @@ import * as fs from 'fs';
 
 const commands = [];
 const commandFiles = fs
-  .readdirSync('./src/commands')
+  .readdirSync(
+    `./${process.env.NODE_ENV === 'development' ? '' : 'dist/'}src/commands`,
+  )
   .filter(file =>
     file.endsWith(process.env.NODE_ENV === 'development' ? '.ts' : '.js'),
   );

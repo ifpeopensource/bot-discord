@@ -11,7 +11,9 @@ const client = new Client({ intents: [Intents.FLAGS.GUILDS] }) as Client;
 client.commands = new Collection();
 
 const commandFiles = fs
-  .readdirSync('./src/commands')
+  .readdirSync(
+    `./${process.env.NODE_ENV === 'development' ? '' : 'dist/'}src/commands`,
+  )
   .filter(file =>
     file.endsWith(process.env.NODE_ENV === 'development' ? '.ts' : '.js'),
   );
@@ -26,7 +28,9 @@ for (const file of commandFiles) {
  */
 
 const eventFiles = fs
-  .readdirSync('./src/events')
+  .readdirSync(
+    `./${process.env.NODE_ENV === 'development' ? '' : 'dist/'}src/events`,
+  )
   .filter(file =>
     file.endsWith(process.env.NODE_ENV === 'development' ? '.ts' : '.js'),
   );
