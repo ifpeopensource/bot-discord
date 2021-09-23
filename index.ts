@@ -12,7 +12,9 @@ client.commands = new Collection();
 
 const commandFiles = fs
   .readdirSync('./src/commands')
-  .filter((file) => file.endsWith('.ts'));
+  .filter(file =>
+    file.endsWith(process.env.NODE_ENV === 'development' ? '.ts' : '.js'),
+  );
 
 for (const file of commandFiles) {
   const command = require(`./src/commands/${file}`).default;
@@ -23,7 +25,11 @@ for (const file of commandFiles) {
  * Loads event files
  */
 
-const eventFiles = fs.readdirSync('./src/events').filter((file) => file.endsWith('.ts'));
+const eventFiles = fs
+  .readdirSync('./src/events')
+  .filter(file =>
+    file.endsWith(process.env.NODE_ENV === 'development' ? '.ts' : '.js'),
+  );
 
 for (const file of eventFiles) {
   const event = require(`./src/events/${file}`).default;

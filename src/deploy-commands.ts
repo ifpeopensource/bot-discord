@@ -8,7 +8,9 @@ import * as fs from 'fs';
 const commands = [];
 const commandFiles = fs
   .readdirSync('./src/commands')
-  .filter((file) => file.endsWith('.ts'));
+  .filter(file =>
+    file.endsWith(process.env.NODE_ENV === 'development' ? '.ts' : '.js'),
+  );
 
 for (const file of commandFiles) {
   const command = require(`./commands/${file}`).default;
