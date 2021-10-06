@@ -17,6 +17,7 @@ export default {
           ['Instagram', 'instagram'],
           ['WhatsApp', 'whatsapp'],
           ['LinkedIn', 'linkedin'],
+          ['Discord', 'discord'],
         ])
         .setRequired(true),
     ),
@@ -48,6 +49,11 @@ export default {
       case 'linkedin':
         await interaction.reply(
           'LinkedIn do IFPE Open Source:\nhttps://www.linkedin.com/company/ifpe-open-source',
+        );
+        break;
+      case 'discord':
+        await interaction.reply(
+          'Servidor no Discord do IFPE Open Source: \nhttps://discord.gg/QjvN9HRA6C',
         );
         break;
       default:
