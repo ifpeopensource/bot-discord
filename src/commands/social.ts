@@ -53,7 +53,7 @@ export default {
         break;
       case 'discord':
         await interaction.reply(
-          'Servido no Discord do IFPE Open Source: \nhttps://discord.gg/6RdDJWQM',
+          'Servido no Discord do IFPE Open Source: \nhttps://discord.gg/QjvN9HRA6C',
         );
         break;
       default:
