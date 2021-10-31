@@ -1,7 +1,7 @@
 {
   "name": "ifpeopensource_bot",
   "version": "1.0.0",
-  "main": "index.ts",
+  "main": "./src/index.ts",
   "license": "MIT",
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only --rs .",
