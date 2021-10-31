@@ -19,7 +19,7 @@ const commandFiles = fs
   );
 
 for (const file of commandFiles) {
-  const command = require(`./src/commands/${file}`).default;
+  const command = require(`./commands/${file}`).default;
   client.commands.set(command.data.name, command);
 }
 
@@ -36,7 +36,7 @@ const eventFiles = fs
   );
 
 for (const file of eventFiles) {
-  const event = require(`./src/events/${file}`).default;
+  const event = require(`./events/${file}`).default;
 
   if (event.once) {
     client.once(event.name, (...args) => event.execute(...args));
