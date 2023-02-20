@@ -1,0 +1,41 @@
+{
+  "choices": [
+    {
+      "name": "Site",
+      "value": "site"
+    },
+    {
+      "name": "Github",
+      "value": "github"
+    },
+    {
+      "name": "Instagram",
+      "value": "instagram"
+    },
+    {
+      "name": "WhatsApp",
+      "value": "whatsapp"
+    },
+    {
+      "name": "LinkedIn",
+      "value": "linkedin"
+    },
+    {
+      "name": "Discord",
+      "value": "discord"
+    },
+    {
+      "name": "YouTube",
+      "value": "youtube"
+    }
+  ],
+  "replies": {
+    "site": "Site do IFPE Open Source:\nhttps://www.ifpeopensource.com.br/",
+    "github": "GitHub do IFPE Open Source:\nifpeopensource\nhttps://github.com/ifpeopensource",
+    "instagram": "Instagram do IFPE Open Source:\n@ifpeopensource\nhttps://www.instagram.com/ifpeopensource/",
+    "whatsapp": "Grupo no WhatsApp do IFPE Open Source:\nhttps://chat.whatsapp.com/DkOVpQuY13NCeRzyEaNwvJ",
+    "linkedin": "LinkedIn do IFPE Open Source:\nhttps://www.linkedin.com/company/ifpe-open-source",
+    "discord": "Servidor no Discord do IFPE Open Source: \nhttps://discord.gg/QjvN9HRA6C",
+    "youtube": "Canal no YouTube do IFPE Open Source:\nhttps://www.youtube.com/@ifpeopensource"
+  }
+}
