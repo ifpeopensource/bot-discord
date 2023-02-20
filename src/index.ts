@@ -1,9 +1,9 @@
 import 'dotenv/config';
 
-import { Client, Intents, Collection } from 'discord.js';
+import { Client, GatewayIntentBits, Collection } from 'discord.js';
 import * as fs from 'fs';
 
-const client = new Client({ intents: [Intents.FLAGS.GUILDS] }) as Client;
+const client = new Client({ intents: [GatewayIntentBits.Guilds] }) as Client;
 
 /**
  * Loads command files

@@ -11,18 +11,18 @@ export default {
       option
         .setName('rede')
         .setDescription('Rede social')
-        .addChoices([
-          ['Site', 'site'],
-          ['Github', 'github'],
-          ['Instagram', 'instagram'],
-          ['WhatsApp', 'whatsapp'],
-          ['LinkedIn', 'linkedin'],
-          ['Discord', 'discord'],
-        ])
+        .addChoices(
+          { name: 'Site', value: 'site' },
+          { name: 'Github', value: 'github' },
+          { name: 'Instagram', value: 'instagram' },
+          { name: 'WhatsApp', value: 'whatsapp' },
+          { name: 'LinkedIn', value: 'linkedin' },
+          { name: 'Discord', value: 'discord' },
+        )
         .setRequired(true),
     ),
   execute: async (interaction: CommandInteraction) => {
-    const socialMedia = interaction.options.getString('rede');
+    const socialMedia = interaction.options.get('rede').value;
     console.log(socialMedia);
 
     switch (socialMedia) {
