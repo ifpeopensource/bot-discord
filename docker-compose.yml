@@ -6,3 +6,4 @@ services:
       - .env
     build: .
     command: yarn start
+    restart: always
