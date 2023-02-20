@@ -1,12 +1,24 @@
-FROM  node:16.9-alpine
+FROM  node:16.9-alpine as builder
 
-WORKDIR /usr/app
-COPY package.json yarn.lock ./
+WORKDIR /usr/src/app
 
-RUN yarn
+COPY package.json ./
+COPY yarn.lock ./
+COPY .env ./
+
+RUN yarn install
 
 COPY . .
 
 RUN yarn build
+
+FROM  node:16.9-alpine as runner
+
+WORKDIR /usr/src/app
+
+COPY --from=builder /usr/src/app/package.json ./
+COPY --from=builder /usr/src/app/yarn.lock ./
+COPY --from=builder /usr/src/app/node_modules ./node_modules
+COPY --from=builder /usr/src/app/dist ./dist
 
 CMD ["yarn", "start"]
